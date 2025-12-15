@@ -1,6 +1,6 @@
 ﻿namespace MyLinkedList
 {
-    public class LinkedList<T>
+    public class LinkedList<T> where T : IComparable<T>
     {
         private Node<T>? head;
         private Node<T>? tail;
@@ -254,6 +254,44 @@
                 }
 
                 previous = current;
+                current = current.Next;
+            }
+        }
+
+        // ========== Replace ==========
+        public void ReplaceAt(T data, int index)
+        {
+            if (IsEmpty() || index < 0 || index >= count)
+            {
+                throw new Exception("Can not replace at this index!");
+            }
+            Node<T> target = Get(index);
+            target.Data = data;
+        }
+        public void ReplaceAll(T _old, T _new)
+        {
+            if (IsEmpty()) return;
+            Node<T> current = head;
+            while (current != null)
+            {
+                if (EqualityComparer<T>.Default.Equals(_old, current.Data))
+                {
+                    current.Data = _new;
+                }
+                current = current.Next;
+            }
+        }
+        public void ReplaceFirst(T _old, T _new)
+        {
+            if (IsEmpty()) return;
+            Node<T> current = head;
+            while (current != null)
+            {
+                if (EqualityComparer<T>.Default.Equals(_old, current.Data))
+                {
+                    current.Data = _new;
+                    return;
+                }
                 current = current.Next;
             }
         }
