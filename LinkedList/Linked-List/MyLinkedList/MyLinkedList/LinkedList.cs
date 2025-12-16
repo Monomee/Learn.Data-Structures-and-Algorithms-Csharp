@@ -316,6 +316,11 @@
 
         public void Display()
         {
+            if (IsEmpty())
+            {
+                Console.WriteLine("List is empty.");
+                return;
+            }
             Console.WriteLine("Linked-list:");
             Node<T>? current = head;
             int index = 0;
