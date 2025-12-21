@@ -17,9 +17,11 @@
 ## Các thao tác cơ bản (Operations)
 ### 1. Chèn/Thêm (Add)
 ![Add](../../Assets/Images/linked-list-add.png)  
+*Chú ý*: Nối trước, cắt sau  
 
 ### 2. Xóa (Remove)
 ![Remove](../../Assets/Images/linked-list-remove.png)  
+*Chú ý*: Nối trước, cắt sau  
 
 ### 3. Lấy phần tử (Get)
 ![Get](../../Assets/Images/linked-list-get.png)  
